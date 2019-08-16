@@ -7,9 +7,8 @@ namespace Neural_Networking_practice
         static void Main(string[] args)
         {
             Network createtest = new Network(2,1,3,1);
-            float[,] hoursSleepStudy = new float[,] { { 3, 5 }, { 5, 1 }, { 10, 2 } };
-            Maths.Scaling(12, 12);
-            Console.WriteLine(Maths.Sigmoid(1));
+
+            Maths.Dot(Network.hoursSleepStudy, Network.score);
             Console.ReadKey();
 
         }

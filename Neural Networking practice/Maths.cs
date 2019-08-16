@@ -9,9 +9,21 @@ namespace Neural_Networking_practice
         public static float Sigmoid(float value)
         {
             return (float)(1 / (1 + Math.Pow(Math.E, -value)));
-         }
+        }
 
-        public static float[,] SigmoidJackedArray(float[,] arr)
+        public static float[] Sigmoid(float[] arr)
+        {
+            float[] nArr = new float[arr.Length];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                nArr[i] = Sigmoid(arr[i]);
+            }
+
+            return nArr;
+        }
+
+        public static float[,] Sigmoid(float[,] arr)
         {
             float[,] nArr = new float[arr.GetLength(0), arr.GetLength(1)];
 
@@ -50,13 +62,42 @@ namespace Neural_Networking_practice
             float[,] scaledArr = new float[arr.GetLength(0), arr.GetLength(1)];
             for (int i = 0; i < arr.GetLength(0); i++)
             {
-                
+
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
                     scaledArr[i, j] = arr[i, j] / maxValue;
                 }
             }
             return scaledArr;
+        }
+        /// <summary>
+        /// Matrix multiplication
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="weight"></param>
+        /// <returns></returns>
+        public static float[,] Dot(float[,] arr, float[,] weight)
+        {
+            float[,] nArr = new float[arr.GetLength(0), weight.GetLength(1)];
+            if(arr.GetLength(1) == weight.GetLength(0))
+            {
+
+                for (int i = 0; i < nArr.GetLength(0); i++)
+                {
+
+                    for (int j = 0; j < nArr.GetLength(1); j++)
+                    {
+
+                        for (int k = 0; k < arr.GetLength(1); k++)
+                        {
+                            nArr[i, j] = nArr[i, j] + arr[i, k] * weight[k, j];
+
+                        }
+                        
+                    }
+                }
+            }
+            return nArr;
         }
 
     }
