@@ -97,6 +97,23 @@ namespace Neural_Networking_practice
                     }
                 }
             }
+            else if(arr.GetLength(0) == weight.GetLength(1))
+            {
+                for (int i = 0; i < nArr.GetLength(0); i++)
+                {
+
+                    for (int j = 0; j < nArr.GetLength(1); j++)
+                    {
+
+                        for (int k = 0; k < weight.GetLength(0); k++)
+                        {
+                            nArr[i, j] = nArr[i, j] + arr[i, k] * weight[k, j];
+
+                        }
+
+                    }
+                }
+            }
             return nArr;
         }
 
