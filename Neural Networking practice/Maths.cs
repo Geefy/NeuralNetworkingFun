@@ -87,7 +87,6 @@ namespace Neural_Networking_practice
 
                     for (int j = 0; j < nArr.GetLength(1); j++)
                     {
-
                         for (int k = 0; k < arr.GetLength(1); k++)
                         {
                             nArr[i, j] = nArr[i, j] + arr[i, k] * weight[k, j];

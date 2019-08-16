@@ -16,6 +16,7 @@ namespace Neural_Networking_practice
                     Console.WriteLine(result[i, j]);
                 }
             }
+            //createtest.Testing(2, 3);
             Console.ReadKey();
 
         }
