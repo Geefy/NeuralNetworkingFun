@@ -35,18 +35,29 @@ namespace Neural_Networking_practice
 
             return yHat;
         }
-        //public void Testing (int input, int hidden)
-        //{
-        //    float[,] w1 = new float[input, hidden];
-        //    for (int i = 0; i < w1.GetLength(0); i++)
-        //    {
-        //        for (int j = 0; j < weight.GetLength(1); j++)
-        //        {
-                   
-        //            w1[i, j] = rnd.
-        //        }
-        //    }
-        //}
+        /// <summary>
+        /// In progress
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="hidden"></param>
+        /// <returns></returns>
+        public float[,] WeightStruct(int input, int hidden)
+        {
+            float[,] w1 = new float[input, hidden];
+            for (int i = 0; i < w1.GetLength(0); i++)
+            {
+                for (int j = 0; j < weight.GetLength(1); j++)
+                {
+
+                    w1[i, j] = Rnd(input, hidden);
+                }
+            }
+            return w1;
+        }
+        public float Rnd(int a, int b)
+        {
+            return a / b;
+        }
 
     }
 }
