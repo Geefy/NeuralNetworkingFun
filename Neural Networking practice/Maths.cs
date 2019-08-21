@@ -38,6 +38,11 @@ namespace Neural_Networking_practice
             return nArr;
         }
 
+        public static float SigmoidPrime (float value)
+        {
+            return Sigmoid(value) * (1 - (Sigmoid(value)));
+        }
+
         public static float Scaling(float value, float maxValue)
         {
 
@@ -113,6 +118,24 @@ namespace Neural_Networking_practice
                     }
                 }
             }
+            else 
+            {
+
+                for (int i = 0; i < nArr.GetLength(0); i++)
+                {
+
+                    for (int j = 0; j < nArr.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < arr.GetLength(1); k++)
+                        {
+                            nArr[i, j] = nArr[i, j] + arr[i, k] * weight[k, j];
+
+                        }
+
+                    }
+                }
+            }
+
             return nArr;
         }
 

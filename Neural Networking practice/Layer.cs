@@ -11,7 +11,7 @@ namespace Neural_Networking_practice
         {
             this.Neurons = new Neuron[neuronCount];
         }
-
+        
 
     }
 }
