@@ -114,7 +114,7 @@ namespace Neural_Networking_practice
         }
 
         /// <summary>
-        /// Get dirivative using weight1 and weight2;
+        /// Get dirivative by weight1 and weight2
         /// </summary>
         /// <param name="x"></param>
         /// <returns></returns>
